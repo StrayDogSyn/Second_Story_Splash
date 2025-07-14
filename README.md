@@ -81,10 +81,13 @@ Second_Story_Splash/
 
 ### Color Palette
 
-- **Primary Blues**: `#0ea5e9` (sky-500) to `#0284c7` (sky-600)
-- **Neutral Grays**: `#f8fafc` (slate-50) to `#1e293b` (slate-800)
-- **Success Green**: `#22c55e` for positive metrics
-- **Alert Red**: `#ef4444` for concerning statistics
+- **Hunter Green**: `#355E3B` (Primary - Logo, buttons, headlines, icons)
+- **Jet Black**: `#0B0B0B` (Accent - Hero backgrounds, footers, navigation)
+- **Charcoal**: `#1E1E1E` (Dark Gray - Text on dark backgrounds, secondary headers)
+- **Soft White**: `#F5F5F5` (Light Contrast - Backgrounds, section dividers, cards)
+- **Sage Gray-Green**: `#A3B9A4` (Secondary - Hover states, secondary buttons, highlights)
+- **Graphite**: `#3F3F3F` (Utility - Body text, border lines, subdued content)
+- **Metallic Silver**: `#C2C2C2` (Highlight - Icon outlines, UI separators, accent lines)
 
 ### Typography
 

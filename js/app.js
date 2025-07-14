@@ -155,7 +155,7 @@ class SecondStoryApp {
 
         Chart.defaults.font.family = "'Inter', sans-serif";
         Chart.defaults.font.size = 12;
-        Chart.defaults.color = '#64748b';
+        Chart.defaults.color = '#3F3F3F';
 
         this.createEmploymentChart();
         this.createPlacementChart();
@@ -170,14 +170,14 @@ class SecondStoryApp {
             plugins: {
                 legend: {
                     labels: {
-                        color: '#475569',
+                        color: '#355E3B',
                         font: { size: 12, family: "'Inter', sans-serif" },
                         padding: 20,
                         usePointStyle: true
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(2, 132, 199, 0.9)',
+                    backgroundColor: 'rgba(53, 94, 59, 0.95)',
                     titleColor: '#fff',
                     bodyColor: '#fff',
                     cornerRadius: 8,
@@ -190,11 +190,11 @@ class SecondStoryApp {
                 y: {
                     beginAtZero: true,
                     grid: {
-                        color: '#e2e8f0',
+                        color: '#C2C2C2',
                         lineWidth: 1
                     },
                     ticks: {
-                        color: '#64748b',
+                        color: '#3F3F3F',
                         font: { size: 11 }
                     }
                 },
@@ -203,7 +203,7 @@ class SecondStoryApp {
                         display: false
                     },
                     ticks: {
-                        color: '#64748b',
+                        color: '#3F3F3F',
                         font: { size: 11 }
                     }
                 }
@@ -231,8 +231,8 @@ class SecondStoryApp {
                 datasets: [{
                     label: '3-Year Recidivism Rate',
                     data: [52, 16],
-                    backgroundColor: ['#f87171', '#4ade80'],
-                    borderColor: ['#ef4444', '#22c55e'],
+                    backgroundColor: ['#ef4444', '#355E3B'],
+                    borderColor: ['#dc2626', '#2a4a30'],
                     borderWidth: 2,
                     borderRadius: 6,
                     borderSkipped: false
@@ -252,10 +252,10 @@ class SecondStoryApp {
                 labels: ['Placed in Tech Role', 'Seeking Placement'],
                 datasets: [{
                     data: [90, 10],
-                    backgroundColor: ['#0ea5e9', '#e2e8f0'],
+                    backgroundColor: ['#355E3B', '#C2C2C2'],
                     borderColor: '#fff',
                     borderWidth: 4,
-                    hoverBackgroundColor: ['#0284c7', '#cbd5e1']
+                    hoverBackgroundColor: ['#4a7c52', '#A3B9A4']
                 }]
             },
             options: {
@@ -265,7 +265,7 @@ class SecondStoryApp {
                 plugins: {
                     legend: { display: false },
                     tooltip: {
-                        backgroundColor: 'rgba(2, 132, 199, 0.9)',
+                        backgroundColor: 'rgba(53, 94, 59, 0.95)',
                         titleColor: '#fff',
                         bodyColor: '#fff',
                         callbacks: {
@@ -299,7 +299,7 @@ class SecondStoryApp {
                 datasets: [{
                     label: 'Average Starting Salary',
                     data: [56000, 85000],
-                    backgroundColor: ['#64748b', '#0ea5e9'],
+                    backgroundColor: ['#3F3F3F', '#355E3B'],
                     borderRadius: 6,
                     borderSkipped: false
                 }]
@@ -325,7 +325,7 @@ class SecondStoryApp {
                 datasets: [{
                     label: 'Recidivism Rate',
                     data: [68, 5],
-                    backgroundColor: ['#f87171', '#0ea5e9'],
+                    backgroundColor: ['#ef4444', '#355E3B'],
                     borderRadius: 6,
                     borderSkipped: false
                 }]
@@ -415,7 +415,7 @@ class SecondStoryApp {
                 datasets: [{
                     label: 'Expenses',
                     data: budgetData.year1.data,
-                    backgroundColor: ['#0ea5e9', '#64748b', '#94a3b8'],
+                    backgroundColor: ['#355E3B', '#3F3F3F', '#A3B9A4'],
                     borderRadius: 6,
                     borderSkipped: false
                 }]
@@ -427,7 +427,7 @@ class SecondStoryApp {
                 plugins: {
                     legend: { display: false },
                     tooltip: {
-                        backgroundColor: 'rgba(2, 132, 199, 0.9)',
+                        backgroundColor: 'rgba(53, 94, 59, 0.95)',
                         titleColor: '#fff',
                         bodyColor: '#fff',
                         callbacks: {
@@ -438,12 +438,12 @@ class SecondStoryApp {
                 scales: {
                     y: {
                         grid: { display: false },
-                        ticks: { color: '#64748b' }
+                        ticks: { color: '#3F3F3F' }
                     },
                     x: {
-                        grid: { color: '#e2e8f0' },
+                        grid: { color: '#C2C2C2' },
                         ticks: {
-                            color: '#64748b',
+                            color: '#3F3F3F',
                             callback: (value) => `$${(value / 1000)}k`
                         }
                     }
