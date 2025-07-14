@@ -29,22 +29,53 @@
             }
         }
         .section-title {
-            @apply text-3xl font-bold text-slate-800 mb-4 text-center;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            text-align: center;
         }
         .section-subtitle {
-            @apply text-lg text-slate-600 mb-8 text-center max-w-3xl mx-auto;
+            font-size: 1.125rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
         }
         .stat-card {
-            @apply bg-white p-6 rounded-xl shadow-lg border border-slate-200 text-center transition-transform duration-300 hover:scale-105;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: scale(1.05);
         }
         .stat-number {
-            @apply text-4xl font-extrabold text-sky-600;
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #0284c7;
         }
         .stat-label {
-            @apply text-sm font-medium text-slate-500 mt-2;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #64748b;
+            margin-top: 0.5rem;
         }
         .nav-link {
-             @apply px-4 py-2 text-sm font-medium text-slate-700 hover:text-sky-600 transition-colors duration-200;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #0284c7;
         }
     </style>
 </head>
@@ -61,7 +92,7 @@
                 <a href="#join-us" class="nav-link bg-sky-600 text-white rounded-lg hover:bg-sky-700 hover:text-white">Join Us</a>
             </div>
             <div class="md:hidden">
-                <button id="menu-btn" class="text-slate-700 focus:outline-none">
+                <button id="menu-btn" class="text-slate-700 focus:outline-none" aria-label="Toggle mobile menu" title="Toggle mobile menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
