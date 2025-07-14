@@ -380,156 +380,35 @@ body {
     }
 }
 
-/* Section Brand Elements */
-.section__brand {
-    text-align: center;
-    margin-bottom: var(--spacing-8);
-}
-
-.section__brand-logo {
-    width: 100px;
-    height: auto;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-
-@media (min-width: 768px) {
-    .section__brand-logo {
-        width: 140px;
-    }
-}
-
-.section__brand-logo:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.section__brand--large {
-    margin-bottom: var(--spacing-12);
-}
-
-.section__brand-banner {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    opacity: 0.9;
-    transition: all 0.3s ease;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
-}
-
-@media (min-width: 768px) {
-    .section__brand-banner {
-        max-width: 800px;
-    }
-}
-
-.section__brand-banner:hover {
-    opacity: 1;
-    transform: scale(1.02);
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, var(--light-contrast) 0%, white 100%);
-    padding: var(--spacing-20) 0;
-    text-align: center;
+/* Section Banner Background */
+.section--banner {
     position: relative;
-    overflow: hidden;
+    background: var(--light-contrast);
 }
 
-@media (min-width: 768px) {
-    .hero {
-        padding: var(--spacing-32) 0;
-    }
-}
-
-.hero::before {
-    content: '';
+.section__banner-bg {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(53, 94, 59, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(163, 185, 164, 0.05) 0%, transparent 50%);
-    pointer-events: none;
+    background-image: url('../assets/brand/2ndStoryBanner2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.03;
+    z-index: 0;
 }
 
-.hero__content {
+.section--banner .container {
     position: relative;
     z-index: 1;
 }
 
-.hero__title {
-    font-size: var(--font-size-4xl);
-    font-weight: 800;
-    color: var(--primary);
-    margin-bottom: var(--spacing-4);
-    line-height: 1.1;
-}
-
 @media (min-width: 768px) {
-    .hero__title {
-        font-size: var(--font-size-6xl);
+    .section__banner-bg {
+        opacity: 0.05;
     }
-}
-
-.hero__subtitle {
-    font-size: var(--font-size-lg);
-    color: var(--utility-gray);
-    max-width: 64rem;
-    margin: 0 auto;
-    font-style: italic;
-    line-height: 1.7;
-}
-
-@media (min-width: 768px) {
-    .hero__subtitle {
-        font-size: var(--font-size-xl);
-    }
-}
-
-.hero__brand {
-    margin-bottom: var(--spacing-8);
-}
-
-.hero__logo {
-    width: 200px;
-    height: auto;
-    max-width: 100%;
-    transition: transform 0.3s ease;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-}
-
-@media (min-width: 768px) {
-    .hero__logo {
-        width: 280px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .hero__logo {
-        width: 320px;
-    }
-}
-
-.hero__logo:hover {
-    transform: scale(1.05);
-}
-
-.hero__banner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('../assets/brand/2ndStoryBanner.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.18;
-    z-index: -1;
 }
 
 /* Grid System */
@@ -693,6 +572,8 @@ body {
 .tabs {
     max-width: 80rem;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .tabs__nav {
