@@ -12,18 +12,21 @@
     <meta property="og:url" content="https://secondstory.org/">
     <meta property="og:title" content="Second Story: Code, Narrative, and Opportunity">
     <meta property="og:description" content="Building pathways to economic mobility for justice-impacted individuals through technology and storytelling.">
+    <meta property="og:image" content="assets/brand/2ndStoryBanner.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://secondstory.org/">
     <meta property="twitter:title" content="Second Story: Code, Narrative, and Opportunity">
     <meta property="twitter:description" content="Building pathways to economic mobility for justice-impacted individuals through technology and storytelling.">
+    <meta property="twitter:image" content="assets/brand/2ndStoryBanner.png">
     
     <title>Second Story: Code, Narrative, and Opportunity</title>
     
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="assets/brand/2ndStoryCircle.png" as="image">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
@@ -32,14 +35,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js" defer></script>
     <script src="js/app.js" defer></script>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/2ndStoryCircle.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/brand/2ndStoryCircle.png">
+    <link rel="apple-touch-icon" href="assets/brand/2ndStoryCircle.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <header class="header" id="header">
         <div class="container">
             <nav class="nav" role="navigation" aria-label="Main navigation">
-                <a href="#" class="nav__brand" aria-label="Second Story home">Second Story</a>
+                <a href="#" class="nav__brand" aria-label="Second Story home">
+                    <img src="assets/brand/2ndStoryCircle.png" alt="Second Story Logo" class="nav__logo">
+                    <span class="nav__brand-text">Second Story</span>
+                </a>
                 
                 <div class="nav__menu">
                     <a href="#problem" class="nav__link">The Crisis</a>
@@ -77,11 +86,17 @@
         <section id="hero" class="hero">
             <div class="container">
                 <div class="hero__content">
+                    <div class="hero__brand">
+                        <img src="assets/brand/2ndStory01.png" alt="Second Story Logo" class="hero__logo">
+                    </div>
                     <h1 class="hero__title">A New Chapter Awaits.</h1>
                     <p class="hero__subtitle">
                         "Second Story unlocks the potential of justice-impacted individuals by providing elite software engineering apprenticeships and empowering them to reclaim their narratives. We build pathways to economic mobility and challenge public perceptions, creating a world where a past conviction does not define a future of contribution."
                     </p>
                 </div>
+            </div>
+            <div class="hero__background">
+                <img src="assets/brand/2ndStoryBanner2.png" alt="" class="hero__banner" aria-hidden="true">
             </div>
         </section>
 
@@ -150,6 +165,9 @@
         <!-- Solution Section -->
         <section id="solution" class="section section--lg section--white">
             <div class="container">
+                <div class="section__brand">
+                    <img src="assets/brand/2ndStory01.png" alt="Second Story Brand" class="section__brand-logo">
+                </div>
                 <h2 class="section__title">The Dual-Track Model: Code + Story</h2>
                 <p class="section__subtitle">
                     A high-paying job is essential, but it's not enough. Our innovative model uniquely combines two powerful, mutually reinforcing tracks. Technical skills get our apprentices the interview; narrative skills empower them to succeed.
@@ -240,6 +258,9 @@
         <!-- Impact Section -->
         <section id="impact" class="section section--lg section--white">
             <div class="container">
+                <div class="section__brand">
+                    <img src="assets/brand/2ndStoryCircle.png" alt="Second Story Brand" class="section__brand-logo">
+                </div>
                 <h2 class="section__title">Our Projected Impact</h2>
                 <p class="section__subtitle">
                     We measure success through transformed lives and communities. Our model produces dramatic, measurable results in economic mobility and reduced recidivism, creating powerful returns on investment.
@@ -345,8 +366,13 @@
     
     <footer class="footer">
         <div class="container">
-            <p class="footer__text">&copy; 2025 Second Story. All rights reserved.</p>
-            <p class="footer__tagline">A new narrative for justice and technology.</p>
+            <div class="footer__brand">
+                <img src="assets/brand/2ndStoryCircle.png" alt="Second Story Logo" class="footer__logo">
+                <div class="footer__content">
+                    <p class="footer__text">&copy; 2025 Second Story. All rights reserved.</p>
+                    <p class="footer__tagline">A new narrative for justice and technology.</p>
+                </div>
+            </div>
         </div>
     </footer>
 

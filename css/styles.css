@@ -166,6 +166,9 @@ body {
 }
 
 .nav__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
     font-size: var(--font-size-xl);
     font-weight: 700;
     color: var(--primary);
@@ -175,6 +178,21 @@ body {
 
 .nav__brand:hover {
     color: var(--primary-light);
+}
+
+.nav__logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform var(--transition-fast);
+}
+
+.nav__brand:hover .nav__logo {
+    transform: scale(1.05);
+}
+
+.nav__brand-text {
+    font-weight: 700;
 }
 
 .nav__menu {
@@ -278,6 +296,38 @@ body {
 .section--primary {
     background-color: var(--primary);
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.section--primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background-image: url('../assets/brand/2ndStoryCircle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (min-width: 768px) {
+    .section--primary::before {
+        width: 400px;
+        height: 400px;
+        right: -5%;
+    }
+}
+
+.section--primary > .container {
+    position: relative;
+    z-index: 1;
 }
 
 .section__title {
@@ -312,6 +362,30 @@ body {
     .section__title {
         font-size: var(--font-size-4xl);
     }
+}
+
+/* Section Brand Elements */
+.section__brand {
+    text-align: center;
+    margin-bottom: var(--spacing-6);
+}
+
+.section__brand-logo {
+    width: 60px;
+    height: auto;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .section__brand-logo {
+        width: 80px;
+    }
+}
+
+.section__brand-logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 /* Hero Section */
@@ -373,6 +447,41 @@ body {
     .hero__subtitle {
         font-size: var(--font-size-xl);
     }
+}
+
+.hero__brand {
+    margin-bottom: var(--spacing-8);
+}
+
+.hero__logo {
+    width: 120px;
+    height: auto;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .hero__logo {
+        width: 160px;
+    }
+}
+
+.hero__logo:hover {
+    transform: scale(1.05);
+}
+
+.hero__banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/brand/2ndStoryBanner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: -1;
 }
 
 /* Grid System */
@@ -757,6 +866,27 @@ body {
 .footer__tagline {
     font-size: var(--font-size-sm);
     color: var(--secondary-accent);
+}
+
+.footer__brand {
+    margin-bottom: var(--spacing-4);
+}
+
+.footer__logo {
+    width: 80px;
+    height: auto;
+    max-width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .footer__logo {
+        width: 100px;
+    }
+}
+
+.footer__logo:hover {
+    opacity: 0.8;
 }
 
 /* Utilities */
