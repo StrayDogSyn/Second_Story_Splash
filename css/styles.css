@@ -319,31 +319,31 @@ body {
     content: '';
     position: absolute;
     top: 50%;
-    right: -10%;
-    width: 300px;
-    height: 300px;
+    left: 50%;
+    width: 500px;
+    height: 500px;
     background-image: url('../assets/brand/2ndStoryCircle.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.12;
-    transform: translateY(-50%);
+    opacity: 0.08;
+    transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 0;
 }
 
 @media (min-width: 768px) {
     .section--primary::before {
-        width: 500px;
-        height: 500px;
-        right: -5%;
-        opacity: 0.15;
+        width: 600px;
+        height: 600px;
+        opacity: 0.1;
     }
 }
 
 .section--primary > .container {
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
 .section__title {
@@ -851,6 +851,10 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-8);
+    max-width: 75rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .cta-card {
@@ -897,6 +901,13 @@ body {
     background: var(--light-contrast);
     color: var(--primary-dark);
     transform: translateY(-1px);
+}
+
+@media (min-width: 1024px) {
+    .cta-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 90rem;
+    }
 }
 
 /* Footer */
