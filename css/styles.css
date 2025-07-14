@@ -295,22 +295,134 @@ body {
     color: var(--primary);
 }
 
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--light-contrast) 0%, white 100%);
+    padding: var(--spacing-20) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: var(--spacing-32) 0;
+        min-height: 80vh;
+    }
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(53, 94, 59, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(163, 185, 164, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 3;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.hero__brand {
+    margin-bottom: var(--spacing-8);
+}
+
+.hero__logo {
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+@media (min-width: 768px) {
+    .hero__logo {
+        width: 280px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero__logo {
+        width: 320px;
+    }
+}
+
+.hero__logo:hover {
+    transform: scale(1.05);
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.hero__banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.18;
+}
+
+.hero__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: var(--spacing-4);
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    .hero__title {
+        font-size: var(--font-size-6xl);
+    }
+}
+
+.hero__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--utility-gray);
+    max-width: 54rem;
+    margin: 0 auto;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+    .hero__subtitle {
+        font-size: var(--font-size-xl);
+    }
+}
+
 /* Sections */
 .section {
-    padding: var(--spacing-20) 0;
+    padding: var(--spacing-16) 0;
 }
 
 .section--lg {
-    padding: var(--spacing-32) 0;
+    padding: var(--spacing-24) 0;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
     .section {
-        padding: var(--spacing-16) 0;
+        padding: var(--spacing-20) 0;
     }
     
     .section--lg {
-        padding: var(--spacing-20) 0;
+        padding: var(--spacing-32) 0;
     }
 }
 
@@ -504,7 +616,7 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-xl);
     border-color: var(--secondary-accent);
 }
@@ -537,7 +649,7 @@ body {
 }
 
 .stat-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     border-color: var(--secondary-accent);
 }
 
@@ -816,21 +928,24 @@ body {
 .footer {
     background: var(--accent-black);
     color: var(--highlight);
-    padding: var(--spacing-8) 0;
+    padding: var(--spacing-12) 0;
     text-align: center;
 }
 
-.footer__text {
-    margin-bottom: var(--spacing-2);
-}
-
-.footer__tagline {
-    font-size: var(--font-size-sm);
-    color: var(--secondary-accent);
-}
-
 .footer__brand {
-    margin-bottom: var(--spacing-4);
+    margin-bottom: var(--spacing-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+    .footer__brand {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--spacing-6);
+    }
 }
 
 .footer__logo {
@@ -848,6 +963,27 @@ body {
 
 .footer__logo:hover {
     opacity: 0.8;
+}
+
+.footer__content {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer__content {
+        text-align: left;
+    }
+}
+
+.footer__text {
+    margin-bottom: var(--spacing-2);
+    font-weight: 500;
+}
+
+.footer__tagline {
+    font-size: var(--font-size-sm);
+    color: var(--secondary-accent);
+    font-style: italic;
 }
 
 /* Utilities */
