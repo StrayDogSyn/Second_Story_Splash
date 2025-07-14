@@ -6,14 +6,21 @@ A modern, professional landing page for Second Story - an innovative program tha
 
 This project transforms data-driven insights into a compelling narrative-driven web experience that guides visitors from understanding the systemic problem to seeing the innovative solution and its projected impact.
 
+## 📸 Screenshot
+
+![Second Story Website](Main.png)
+
+*The modern, professional Second Story website featuring the Hunter Green brand color palette, comprehensive brand integration, and interactive data visualizations.*
+
 ## ✨ Features
 
 ### Modern Web Standards
 
-- **Semantic HTML5** with proper accessibility attributes
-- **CSS Custom Properties** for maintainable theming
+- **Semantic HTML5** with proper accessibility attributes and brand integration
+- **Hunter Green Color Palette** with professional CSS custom properties
+- **Comprehensive Brand Integration** featuring Second Story logos throughout
 - **Progressive Enhancement** ensuring core functionality without JavaScript
-- **Responsive Design** optimized for all device sizes
+- **Responsive Design** optimized for all device sizes with hero section
 - **Performance Optimized** with efficient loading and animations
 
 ### Interactive Data Visualizations
@@ -67,19 +74,28 @@ This project transforms data-driven insights into a compelling narrative-driven 
 
 ```text
 Second_Story_Splash/
-├── index.html              # Main HTML file
+├── index.html              # Main HTML file with comprehensive brand integration
 ├── css/
-│   └── styles.css          # Main stylesheet with CSS custom properties
+│   └── styles.css          # Hunter Green palette with brand-focused styling
 ├── js/
-│   └── app.js              # Application logic and interactions
-├── package.json            # Project configuration and dependencies
-├── README.md              # This file
-└── LICENSE                # MIT license
+│   └── app.js              # Application logic with brand color chart integration
+├── assets/
+│   └── brand/              # Second Story brand assets
+│       ├── 2ndStory01.png        # Primary logo
+│       ├── 2ndStoryBanner.png    # Banner logo
+│       ├── 2ndStoryBanner2.png   # Secondary banner
+│       └── 2ndStoryCircle.png    # Circular logo variant
+├── Main.png               # Website screenshot
+├── package.json           # Project configuration and dependencies
+├── README.md             # This documentation
+└── LICENSE               # MIT license
 ```
 
 ## 🎨 Design System
 
-### Color Palette
+### Hunter Green Brand Palette
+
+The website features a comprehensive Hunter Green color scheme with strategic brand asset integration throughout all sections:
 
 - **Hunter Green**: `#355E3B` (Primary - Logo, buttons, headlines, icons)
 - **Jet Black**: `#0B0B0B` (Accent - Hero backgrounds, footers, navigation)
