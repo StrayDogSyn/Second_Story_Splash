@@ -1,0 +1,49 @@
+{
+  "name": "second-story-splash",
+  "version": "1.0.0",
+  "description": "Second Story - Code, Narrative, and Opportunity landing page",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html",
+    "build": "npm run minify-css && npm run minify-js",
+    "minify-css": "csso css/styles.css --output css/styles.min.css",
+    "minify-js": "uglifyjs js/app.js --output js/app.min.js --compress --mangle",
+    "lint": "stylelint css/**/*.css && eslint js/**/*.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StrayDogSyn/Second_Story_Splash.git"
+  },
+  "keywords": [
+    "justice-impacted",
+    "software-engineering",
+    "apprenticeships",
+    "reentry",
+    "recidivism",
+    "technology-training",
+    "nonprofit"
+  ],
+  "author": "Second Story",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StrayDogSyn/Second_Story_Splash/issues"
+  },
+  "homepage": "https://github.com/StrayDogSyn/Second_Story_Splash#readme",
+  "devDependencies": {
+    "csso-cli": "^4.0.1",
+    "eslint": "^8.57.0",
+    "live-server": "^1.2.2",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "uglify-js": "^3.17.4"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

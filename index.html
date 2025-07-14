@@ -1,85 +1,359 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Second Story unlocks the potential of justice-impacted individuals through elite software engineering apprenticeships and narrative empowerment.">
+    <meta name="keywords" content="justice-impacted, software engineering, apprenticeships, reentry, recidivism, technology training">
+    <meta name="author" content="Second Story">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://secondstory.org/">
+    <meta property="og:title" content="Second Story: Code, Narrative, and Opportunity">
+    <meta property="og:description" content="Building pathways to economic mobility for justice-impacted individuals through technology and storytelling.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://secondstory.org/">
+    <meta property="twitter:title" content="Second Story: Code, Narrative, and Opportunity">
+    <meta property="twitter:description" content="Building pathways to economic mobility for justice-impacted individuals through technology and storytelling.">
+    
     <title>Second Story: Code, Narrative, and Opportunity</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Chosen Palette: Warm Neutrals & Hopeful Accents -->
-    <!-- Application Structure Plan: The application is designed as a single-page, narrative-driven journey. It guides the user from understanding the systemic problem (The Crisis), to learning about the innovative solution (The Model), seeing how it works (The Journey), visualizing the results (The Impact), and finally being presented with a clear call to action (Join Us). This storytelling structure is more persuasive and emotionally engaging than a standard report layout, making the case for support more compelling for potential funders and partners by transforming data into a story of challenge and hope. -->
-    <!-- Visualization & Content Choices: Data from the report is transformed into interactive visualizations to make complex information digestible. GOAL: Compare -> VIZ: Bar charts (Chart.js) to show disparities in recidivism and unemployment. GOAL: Inform -> VIZ: Dynamic counters for large financial numbers and donut charts for key percentages (90% placement). GOAL: Explain Process -> VIZ: An interactive, tabbed HTML/CSS component to show the three-phase apprentice journey. GOAL: Organize -> VIZ: An interactive bar chart for budget allocation that allows users to toggle between years. This approach avoids dense tables and uses interaction to allow users to drill down into details, respecting their attention while providing depth. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            height: 300px;
-            margin: auto;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-                max-width: 450px;
-            }
-        }
-        .section-title {
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-            text-align: center;
-            max-width: 48rem;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .stat-card {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .stat-card:hover {
-            transform: scale(1.05);
-        }
-        .stat-number {
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: #0284c7;
-        }
-        .stat-label {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #64748b;
-            margin-top: 0.5rem;
-        }
-        .nav-link {
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #374151;
-            transition: color 0.2s ease;
-        }
-        .nav-link:hover {
-            color: #0284c7;
-        }
-    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="css/styles.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js" defer></script>
+    <script src="js/app.js" defer></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
-<body class="bg-slate-50 text-slate-700">
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <a href="#" class="nav__brand" aria-label="Second Story home">Second Story</a>
+                
+                <div class="nav__menu">
+                    <a href="#problem" class="nav__link">The Crisis</a>
+                    <a href="#solution" class="nav__link">Our Model</a>
+                    <a href="#journey" class="nav__link">The Journey</a>
+                    <a href="#impact" class="nav__link">Our Impact</a>
+                    <a href="#join-us" class="nav__link nav__link--primary">Join Us</a>
+                </div>
+                
+                <button 
+                    id="menu-btn" 
+                    class="nav__toggle" 
+                    aria-label="Toggle mobile menu" 
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </nav>
+            
+            <div id="mobile-menu" class="nav__mobile" role="menu">
+                <a href="#problem" class="nav__mobile-link" role="menuitem">The Crisis</a>
+                <a href="#solution" class="nav__mobile-link" role="menuitem">Our Model</a>
+                <a href="#journey" class="nav__mobile-link" role="menuitem">The Journey</a>
+                <a href="#impact" class="nav__mobile-link" role="menuitem">Our Impact</a>
+                <a href="#join-us" class="nav__mobile-link" role="menuitem">Join Us</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">A New Chapter Awaits.</h1>
+                    <p class="hero__subtitle">
+                        "Second Story unlocks the potential of justice-impacted individuals by providing elite software engineering apprenticeships and empowering them to reclaim their narratives. We build pathways to economic mobility and challenge public perceptions, creating a world where a past conviction does not define a future of contribution."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem" class="section section--lg">
+            <div class="container">
+                <h2 class="section__title">The Crisis of the Revolving Door</h2>
+                <p class="section__subtitle">
+                    The cycle of incarceration is driven by systemic barriers that prevent successful reentry. Formerly incarcerated individuals face staggering unemployment rates and a "Digital Cliff"—a profound lack of tech skills needed for today's economy.
+                </p>
+                
+                <div class="grid grid--3 spacing--bottom-3">
+                    <div class="stat-card">
+                        <span id="unemployment-stat" class="stat-card__number" aria-label="27 percent">27%</span>
+                        <p class="stat-card__label">Unemployment Rate for Formerly Incarcerated (vs. ~5% for general population)</p>
+                    </div>
+                    <div class="stat-card">
+                        <span id="rearrest-stat" class="stat-card__number" aria-label="83 percent">83%</span>
+                        <p class="stat-card__label">Rearrest Rate Within 9 Years of Release</p>
+                    </div>
+                    <div class="stat-card">
+                        <span id="cost-stat" class="stat-card__number" aria-label="48 billion dollars">$48B</span>
+                        <p class="stat-card__label">Annual Cost of U.S. State and Federal Prisons</p>
+                    </div>
+                </div>
+
+                <div class="grid grid--2 grid--items-start">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3 class="card__title">Employment Halts Recidivism</h3>
+                            <p class="text-sm text--center-small spacing--bottom-1">
+                                This chart shows the dramatic impact of stable employment. Securing a job for just one year drops the three-year recidivism rate by over two-thirds.
+                            </p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="employmentRecidivismChart" aria-label="Bar chart showing recidivism rates: 52% for unemployed vs 16% for employed"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__header">
+                            <h3 class="card__title">The "Digital Cliff"</h3>
+                            <p class="card__content spacing--bottom-1">
+                                Individuals reentering society today face a world transformed by technology. Without access to the internet or modern devices while incarcerated, they lack fundamental digital literacy.
+                            </p>
+                        </div>
+                        <ul class="feature-list">
+                            <li class="feature-list__item">
+                                <span class="feature-list__icon" aria-hidden="true">✓</span>
+                                <p class="feature-list__text">Digital illiteracy creates direct barriers to employment, services, and community reintegration.</p>
+                            </li>
+                            <li class="feature-list__item">
+                                <span class="feature-list__icon" aria-hidden="true">✓</span>
+                                <p class="feature-list__text">It isolates returning citizens, multiplying challenges and accelerating paths back to incarceration.</p>
+                            </li>
+                            <li class="feature-list__item">
+                                <span class="feature-list__icon" aria-hidden="true">✓</span>
+                                <p class="feature-list__text">Second Story bridges this gap, creating pathways to the tech economy.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section id="solution" class="section section--lg section--white">
+            <div class="container">
+                <h2 class="section__title">The Dual-Track Model: Code + Story</h2>
+                <p class="section__subtitle">
+                    A high-paying job is essential, but it's not enough. Our innovative model uniquely combines two powerful, mutually reinforcing tracks. Technical skills get our apprentices the interview; narrative skills empower them to succeed.
+                </p>
+                
+                <div class="grid grid--2 grid--max-4xl">
+                    <div class="card card--center">
+                        <div class="icon--large" aria-hidden="true">💻</div>
+                        <h3 class="card__title">The Code</h3>
+                        <p class="card__content">
+                            Rigorous, market-aligned software engineering training. Apprentices learn full-stack web development, build real-world projects, and master technical skills for high-growth careers.
+                        </p>
+                    </div>
+                    <div class="card card--center">
+                        <div class="icon--large" aria-hidden="true">🎤</div>
+                        <h3 class="card__title">The Story</h3>
+                        <p class="card__content">
+                            Transformative narrative workshops inspired by The Moth. Apprentices craft and perform personal stories, building communication skills and confidence to reframe their past as resilience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section id="journey" class="section section--lg">
+            <div class="container">
+                <h2 class="section__title">The Apprentice Journey</h2>
+                <p class="section__subtitle">
+                    Our program is a comprehensive, multi-phase journey from foundational stabilization to career launch and lifelong community support. Click each phase to learn more.
+                </p>
+                
+                <div class="tabs">
+                    <div class="tabs__nav" role="tablist">
+                        <button 
+                            class="tabs__button" 
+                            data-tab="phase1" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="phase1"
+                        >
+                            Phase 1: Bridge
+                        </button>
+                        <button 
+                            class="tabs__button" 
+                            data-tab="phase2" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="phase2"
+                        >
+                            Phase 2: Core Program
+                        </button>
+                        <button 
+                            class="tabs__button" 
+                            data-tab="phase3" 
+                            role="tab" 
+                            aria-selected="false" 
+                            aria-controls="phase3"
+                        >
+                            Phase 3: Career Launch
+                        </button>
+                    </div>
+                    
+                    <div class="tabs__content">
+                        <div id="phase1" class="tabs__panel" role="tabpanel" aria-hidden="true">
+                            <h3>Recruitment & Bridge Program (2-4 Weeks)</h3>
+                            <p>
+                                We start by identifying high-potential candidates and preparing them for success. This paid, pre-apprenticeship program closes the "Digital Cliff" by teaching foundational digital literacy and professional norms, ensuring everyone starts the core program on a level playing field.
+                            </p>
+                        </div>
+                        <div id="phase2" class="tabs__panel" role="tabpanel" aria-hidden="true">
+                            <h3>Core Apprenticeship (12 Months)</h3>
+                            <p>
+                                The heart of our "earn and learn" model. Apprentices receive a living wage while engaging in our dual-track curriculum. 80% of their time is dedicated to immersive technical training, building real applications. 20% is spent in narrative workshops, honing their personal story and public speaking skills.
+                            </p>
+                        </div>
+                        <div id="phase3" class="tabs__panel" role="tabpanel" aria-hidden="true">
+                            <h3>Job Placement & Alumni Network (Lifelong)</h3>
+                            <p>
+                                Graduation is just the beginning. We provide dedicated placement support, connecting graduates with our network of employer partners. Alumni join a lifelong community for peer support, professional development, and opportunities to mentor the next generation, creating a virtuous cycle of success.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Impact Section -->
+        <section id="impact" class="section section--lg section--white">
+            <div class="container">
+                <h2 class="section__title">Our Projected Impact</h2>
+                <p class="section__subtitle">
+                    We measure success through transformed lives and communities. Our model produces dramatic, measurable results in economic mobility and reduced recidivism, creating powerful returns on investment.
+                </p>
+                
+                <div class="grid grid--3">
+                    <div class="stat-card">
+                        <h3 class="card__title spacing--bottom-1">Goal: Job Placement</h3>
+                        <div class="chart-container chart--small">
+                            <canvas id="placementRateChart" aria-label="Donut chart showing 90% job placement rate goal"></canvas>
+                        </div>
+                        <p class="text-sm text--muted spacing--top-1">
+                            Targeting >90% placement rate for graduates in full-time tech roles within 3 months.
+                        </p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3 class="card__title spacing--bottom-1">Goal: Higher Salaries</h3>
+                        <div class="chart-container chart--small">
+                            <canvas id="salaryChart" aria-label="Bar chart comparing average US salary to Second Story graduate salaries"></canvas>
+                        </div>
+                        <p class="text-sm text--muted spacing--top-1">
+                            Graduates earn an average starting salary over $80,000, creating generational wealth.
+                        </p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h3 class="card__title spacing--bottom-1">Goal: Reduced Recidivism</h3>
+                        <div class="chart-container chart--small">
+                            <canvas id="recidivismReductionChart" aria-label="Bar chart showing recidivism reduction from 68% national average to 5% goal"></canvas>
+                        </div>
+                        <p class="text-sm text--muted spacing--top-1">
+                            We project a recidivism rate under 5%, a >90% reduction from the national average.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget Section -->
+        <section id="budget" class="section section--lg">
+            <div class="container">
+                <h2 class="section__title">Our 2-Year Plan & Budget</h2>
+                <p class="section__subtitle">
+                    We have a clear, actionable roadmap for launch and growth. This chart shows our projected allocation of resources, demonstrating how funding will be strategically used to build our program and serve our first cohort.
+                </p>
+                
+                <div class="budget-chart">
+                    <div class="budget-controls">
+                        <div class="budget-controls__group">
+                            <button id="year1-btn" class="budget-controls__button active">Year 1</button>
+                            <button id="year2-btn" class="budget-controls__button">Year 2</button>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container chart--budget">
+                        <canvas id="budgetChart" aria-label="Horizontal bar chart showing budget allocation by category"></canvas>
+                    </div>
+                    
+                    <div id="budget-details" class="budget-details">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="join-us" class="section section--lg section--primary">
+            <div class="container">
+                <h2 class="section__title">Become Part of the Story</h2>
+                <p class="section__subtitle">
+                    We cannot do this alone. We are building an ecosystem of partners committed to creating second chances. Whether you are a potential employer, a community organization, or a donor, you have a role to play.
+                </p>
+                
+                <div class="cta-grid">
+                    <div class="cta-card">
+                        <h3 class="cta-card__title">Partner with Us</h3>
+                        <p class="cta-card__text">
+                            Become an employer partner and gain access to a pipeline of skilled, resilient, and motivated tech talent.
+                        </p>
+                        <a href="#" class="cta-card__button">Learn More</a>
+                    </div>
+                    
+                    <div class="cta-card">
+                        <h3 class="cta-card__title">Support Us</h3>
+                        <p class="cta-card__text">
+                            Your financial contribution provides the resources—from laptops to living wages—that make our work possible.
+                        </p>
+                        <a href="#" class="cta-card__button">Donate Now</a>
+                    </div>
+                    
+                    <div class="cta-card">
+                        <h3 class="cta-card__title">Get Involved</h3>
+                        <p class="cta-card__text">
+                            Join our network of community partners or mentors to provide the holistic support our apprentices need to thrive.
+                        </p>
+                        <a href="#" class="cta-card__button">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">&copy; 2025 Second Story. All rights reserved.</p>
+            <p class="footer__tagline">A new narrative for justice and technology.</p>
+        </div>
+    </footer>
+
+    <!-- Skip link for accessibility -->
+    <a href="#main" class="sr-only">Skip to main content</a>
+</body>
+</html>
 
     <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm border-b border-slate-200">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
