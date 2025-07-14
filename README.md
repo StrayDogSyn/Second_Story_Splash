@@ -9,6 +9,7 @@ This project transforms data-driven insights into a compelling narrative-driven 
 ## ✨ Features
 
 ### Modern Web Standards
+
 - **Semantic HTML5** with proper accessibility attributes
 - **CSS Custom Properties** for maintainable theming
 - **Progressive Enhancement** ensuring core functionality without JavaScript
@@ -16,12 +17,14 @@ This project transforms data-driven insights into a compelling narrative-driven 
 - **Performance Optimized** with efficient loading and animations
 
 ### Interactive Data Visualizations
+
 - **Animated Statistics** that engage on scroll
 - **Chart.js Integration** for compelling data presentation
 - **Interactive Budget Charts** with year-over-year comparison
 - **Tabbed Journey Interface** showcasing the apprentice experience
 
 ### Accessibility & UX
+
 - **WCAG 2.1 AA Compliant** with proper ARIA labels
 - **Keyboard Navigation** support throughout
 - **Screen Reader Optimized** with semantic markup
@@ -29,6 +32,7 @@ This project transforms data-driven insights into a compelling narrative-driven 
 - **Reduced Motion** respect for user preferences
 
 ### Professional Architecture
+
 - **Separation of Concerns** with modular CSS and JavaScript
 - **Mobile-First Design** with progressive enhancement
 - **Error Handling** and graceful degradation
@@ -37,17 +41,21 @@ This project transforms data-driven insights into a compelling narrative-driven 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - Optional: Node.js for development tools
 
 ### Installation
+
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/StrayDogSyn/Second_Story_Splash.git
    cd Second_Story_Splash
    ```
 
 2. For development with live reload:
+
    ```bash
    npm install
    npm run dev
@@ -57,7 +65,7 @@ This project transforms data-driven insights into a compelling narrative-driven 
 
 ## 📁 Project Structure
 
-```
+```text
 Second_Story_Splash/
 ├── index.html              # Main HTML file
 ├── css/
@@ -72,17 +80,20 @@ Second_Story_Splash/
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Primary Blues**: `#0ea5e9` (sky-500) to `#0284c7` (sky-600)
 - **Neutral Grays**: `#f8fafc` (slate-50) to `#1e293b` (slate-800)
 - **Success Green**: `#22c55e` for positive metrics
 - **Alert Red**: `#ef4444` for concerning statistics
 
 ### Typography
+
 - **Font Family**: Inter (Google Fonts)
 - **Weights**: 300 (Light) to 900 (Black)
 - **Scale**: Modular scale from 0.75rem to 3.75rem
 
 ### Layout System
+
 - **Container**: Max-width 1200px with responsive padding
 - **Grid**: CSS Grid with 1-3 column responsive layouts
 - **Spacing**: Consistent scale using CSS custom properties
@@ -90,20 +101,25 @@ Second_Story_Splash/
 ## 🛠 Development
 
 ### CSS Architecture
+
 The CSS follows a component-based architecture with:
+
 - **CSS Custom Properties** for theming and consistency
 - **Utility Classes** for common patterns
 - **Component Classes** for reusable UI elements
 - **Layout Classes** for structural elements
 
 ### JavaScript Modules
+
 The JavaScript is organized as a single class with clear separation of concerns:
+
 - **Navigation Management**: Mobile menu and smooth scrolling
 - **Animation Controllers**: Scroll-triggered and counter animations
 - **Chart Management**: Chart.js integration and data visualization
 - **Interaction Handlers**: Tabs, buttons, and form interactions
 
 ### Performance Considerations
+
 - **Lazy Loading**: Charts only initialize when needed
 - **Throttled Scroll Events**: Optimized scroll listeners
 - **Efficient Animations**: Using `requestAnimationFrame`
@@ -112,21 +128,25 @@ The JavaScript is organized as a single class with clear separation of concerns:
 ## 📊 Data Visualizations
 
 ### Employment & Recidivism Chart
+
 - **Type**: Bar chart comparing unemployed vs employed recidivism rates
 - **Data**: 52% vs 16% three-year recidivism rates
 - **Purpose**: Demonstrates the power of employment in reducing recidivism
 
 ### Job Placement Chart
+
 - **Type**: Doughnut chart showing placement goals
 - **Data**: 90% placement target in tech roles
 - **Purpose**: Illustrates program success metrics
 
 ### Salary Comparison Chart
+
 - **Type**: Bar chart comparing average salaries
 - **Data**: $56k average vs $85k Second Story graduates
 - **Purpose**: Shows economic mobility potential
 
 ### Budget Allocation Chart
+
 - **Type**: Interactive horizontal bar chart
 - **Data**: Two-year budget breakdown by category
 - **Purpose**: Transparent funding allocation demonstration
@@ -134,12 +154,14 @@ The JavaScript is organized as a single class with clear separation of concerns:
 ## 🔧 Configuration
 
 ### Browser Support
+
 - Chrome/Edge 88+
 - Firefox 85+
 - Safari 14+
 - Mobile browsers with ES2018 support
 
 ### Performance Targets
+
 - **First Contentful Paint**: < 1.5s
 - **Largest Contentful Paint**: < 2.5s
 - **Cumulative Layout Shift**: < 0.1
@@ -148,18 +170,24 @@ The JavaScript is organized as a single class with clear separation of concerns:
 ## 🚀 Deployment
 
 ### Static Hosting
+
 This project is designed for static hosting on platforms like:
+
 - **Netlify**: Drag and drop deployment
 - **Vercel**: Git-connected deployments
 - **GitHub Pages**: Direct repository hosting
 - **AWS S3**: Static website hosting
 
 ### Build Process
+
 For production deployment:
+
 ```bash
 npm run build
 ```
+
 This will:
+
 - Minify CSS and JavaScript
 - Optimize assets for production
 - Generate compressed files
@@ -173,6 +201,7 @@ This will:
 5. Open a Pull Request
 
 ### Code Standards
+
 - **HTML**: Semantic, accessible markup
 - **CSS**: BEM-inspired naming, mobile-first
 - **JavaScript**: ES6+, functional approach
@@ -222,11 +251,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Second Story**
+### Second Story
+
 - Website: [https://secondstory.org](https://secondstory.org)
-- Email: contact@secondstory.org
+- Email: [contact@secondstory.org](mailto:contact@secondstory.org)
 
 ---
 
-*Building pathways to economic mobility through technology and storytelling.*
- The application will translate the detailed report into a compelling, narrative-driven experience, designed to engage potential funders and partners. It will visualize the key data, explain the program's unique model,
+**Building pathways to economic mobility through technology and storytelling.**
