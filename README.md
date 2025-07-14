@@ -8,7 +8,7 @@ This project transforms data-driven insights into a compelling narrative-driven 
 
 ## 📸 Screenshot
 
-![Second Story Website](Main.png)
+![Second Story Website](assets/screenshots/Main.png)
 
 *The modern, professional Second Story website featuring the Hunter Green brand color palette, comprehensive brand integration, and interactive data visualizations.*
 
@@ -80,12 +80,13 @@ Second_Story_Splash/
 ├── js/
 │   └── app.js              # Application logic with brand color chart integration
 ├── assets/
-│   └── brand/              # Second Story brand assets
-│       ├── 2ndStory01.png        # Primary logo
-│       ├── 2ndStoryBanner.png    # Banner logo
-│       ├── 2ndStoryBanner2.png   # Secondary banner
-│       └── 2ndStoryCircle.png    # Circular logo variant
-├── Main.png               # Website screenshot
+│   ├── brand/              # Second Story brand assets
+│   │   ├── 2ndStory01.png        # Primary logo
+│   │   ├── 2ndStoryBanner.png    # Banner logo
+│   │   ├── 2ndStoryBanner2.png   # Secondary banner
+│   │   └── 2ndStoryCircle.png    # Circular logo variant
+│   └── screenshots/        # Documentation screenshots
+│       └── Main.png              # Website homepage screenshot
 ├── package.json           # Project configuration and dependencies
 ├── README.md             # This documentation
 └── LICENSE               # MIT license
