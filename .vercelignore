@@ -1,6 +1,7 @@
-node_modules
-.git
-.vscode
+node_modules/
+.git/
+.vscode/
 *.log
 .DS_Store
 README.md
+build-script.js
