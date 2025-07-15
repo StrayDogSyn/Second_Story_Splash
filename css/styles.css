@@ -74,6 +74,32 @@
     --letter-spacing-wider: 0.05em;
     --letter-spacing-widest: 0.1em;
     
+    /* Glassmorphism Design System */
+    --glass-white: rgba(255, 255, 255, 0.1);
+    --glass-white-strong: rgba(255, 255, 255, 0.2);
+    --glass-white-subtle: rgba(255, 255, 255, 0.05);
+    --glass-primary: rgba(53, 94, 59, 0.15);
+    --glass-primary-strong: rgba(53, 94, 59, 0.25);
+    --glass-dark: rgba(30, 30, 30, 0.3);
+    --glass-dark-strong: rgba(30, 30, 30, 0.5);
+    
+    /* Glass borders */
+    --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+    --glass-border-strong: 1px solid rgba(255, 255, 255, 0.3);
+    --glass-border-subtle: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Backdrop blur values */
+    --blur-sm: blur(4px);
+    --blur-md: blur(8px);
+    --blur-lg: blur(12px);
+    --blur-xl: blur(16px);
+    --blur-2xl: blur(24px);
+    
+    /* Glass shadows */
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --glass-shadow-lg: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+    --glass-shadow-xl: 0 16px 48px 0 rgba(31, 38, 135, 0.55);
+    
     /* Spacing */
     --spacing-1: 0.25rem;
     --spacing-2: 0.5rem;
@@ -472,18 +498,25 @@ pre {
 
 /* Header */
 .header {
-    background: var(--accent-black);
+    background: var(--glass-dark-strong);
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md);
+    border: var(--glass-border-subtle);
+    border-left: none;
+    border-right: none;
     position: sticky;
     top: 0;
     z-index: 50;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--glass-shadow);
     border-bottom: 3px solid var(--primary);
     transition: all var(--transition-normal);
 }
 
 .header.scrolled {
-    background: var(--accent-black);
-    box-shadow: var(--shadow-lg);
+    background: var(--glass-dark);
+    -webkit-backdrop-filter: var(--blur-lg);
+    backdrop-filter: var(--blur-lg);
+    box-shadow: var(--glass-shadow-lg);
 }
 
 .nav {
@@ -633,7 +666,12 @@ pre {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--light-contrast) 0%, white 100%);
+    background: linear-gradient(135deg, 
+        rgba(245, 245, 245, 0.6) 0%, 
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(248, 250, 252, 0.6) 100%);
+    -webkit-backdrop-filter: var(--blur-sm);
+    backdrop-filter: var(--blur-sm);
     padding: var(--spacing-20) 0;
     text-align: center;
     position: relative;
@@ -776,7 +814,9 @@ pre {
 }
 
 .section--white {
-    background-color: white;
+    background: var(--glass-white-subtle);
+    -webkit-backdrop-filter: var(--blur-sm);
+    backdrop-filter: var(--blur-sm);
 }
 
 .section--primary {
@@ -965,19 +1005,24 @@ pre {
 
 /* Cards */
 .card {
-    background: white;
+    background: var(--glass-white-strong);
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md);
     border-radius: var(--radius-xl);
     padding: var(--spacing-6);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--highlight);
+    box-shadow: var(--glass-shadow);
+    border: var(--glass-border);
     transition: all var(--transition-normal);
     height: 100%;
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--secondary-accent);
+    transform: translateY(-4px);
+    background: var(--glass-white);
+    -webkit-backdrop-filter: var(--blur-lg);
+    backdrop-filter: var(--blur-lg);
+    box-shadow: var(--glass-shadow-lg);
+    border: var(--glass-border-strong);
 }
 
 .card__header {
@@ -1005,17 +1050,23 @@ pre {
 /* Stat Cards */
 .stat-card {
     text-align: center;
-    background: white;
+    background: var(--glass-white);
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md);
     border-radius: var(--radius-xl);
     padding: var(--spacing-6);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--highlight);
-    transition: transform var(--transition-slow);
+    box-shadow: var(--glass-shadow);
+    border: var(--glass-border);
+    transition: all var(--transition-slow);
 }
 
 .stat-card:hover {
-    transform: scale(1.02);
-    border-color: var(--secondary-accent);
+    transform: scale(1.03) translateY(-2px);
+    background: var(--glass-white-strong);
+    -webkit-backdrop-filter: var(--blur-lg);
+    backdrop-filter: var(--blur-lg);
+    border: var(--glass-border-strong);
+    box-shadow: var(--glass-shadow-lg);
 }
 
 .stat-card__number {
@@ -1076,10 +1127,14 @@ pre {
     display: flex;
     border-bottom: 2px solid var(--highlight);
     margin-bottom: var(--spacing-8);
-    background: white;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    background: var(--glass-white-subtle);
+    -webkit-backdrop-filter: var(--blur-sm);
+    backdrop-filter: var(--blur-sm);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border: var(--glass-border-subtle);
+    border-bottom: var(--glass-border);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--glass-shadow);
 }
 
 .tabs__button {
@@ -1088,7 +1143,9 @@ pre {
     font-family: var(--font-family-primary);
     font-weight: 600;
     color: var(--utility-gray);
-    background: var(--light-contrast);
+    background: var(--glass-white-subtle);
+    -webkit-backdrop-filter: var(--blur-sm);
+    backdrop-filter: var(--blur-sm);
     border: none;
     border-bottom: 4px solid transparent;
     cursor: pointer;
@@ -1106,22 +1163,28 @@ pre {
 }
 
 .tabs__button:hover {
-    background: var(--secondary-light);
+    background: var(--glass-white);
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md);
     color: var(--primary);
 }
 
 .tabs__button.active {
     color: var(--primary);
-    background: white;
+    background: var(--glass-white-strong);
+    -webkit-backdrop-filter: var(--blur-lg);
+    backdrop-filter: var(--blur-lg);
     border-bottom-color: var(--primary);
 }
 
 .tabs__content {
     padding: var(--spacing-8);
-    background: white;
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--highlight);
+    background: var(--glass-white);
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--glass-shadow);
+    border: var(--glass-border);
     border-top: none;
 }
 
@@ -1155,11 +1218,13 @@ pre {
 
 /* Budget Chart */
 .budget-chart {
-    background: white;
+    background: var(--glass-white);
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md);
     padding: var(--spacing-6);
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--highlight);
+    box-shadow: var(--glass-shadow);
+    border: var(--glass-border);
     max-width: 64rem;
     margin: 0 auto;
 }
@@ -1262,19 +1327,24 @@ pre {
 }
 
 .cta-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--glass-white);
     padding: var(--spacing-8);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     text-align: center;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: var(--blur-lg);
+    backdrop-filter: var(--blur-lg);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
     transition: all var(--transition-normal);
 }
 
 .cta-card:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
+    background: var(--glass-white-strong);
+    -webkit-backdrop-filter: var(--blur-xl);
+    backdrop-filter: var(--blur-xl);
+    transform: translateY(-4px);
+    box-shadow: var(--glass-shadow-lg);
+    border: var(--glass-border-strong);
 }
 
 .cta-card__title {
@@ -1453,3 +1523,94 @@ a:focus {
         color: black !important;
     }
 }
+
+/* Glassmorphism Utility Classes */
+.glass {
+    background: var(--glass-white);
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.glass--strong {
+    background: var(--glass-white-strong);
+    -webkit-backdrop-filter: var(--blur-lg);
+    backdrop-filter: var(--blur-lg);
+    border: var(--glass-border-strong);
+    box-shadow: var(--glass-shadow-lg);
+}
+
+.glass--subtle {
+    background: var(--glass-white-subtle);
+    -webkit-backdrop-filter: var(--blur-sm);
+    backdrop-filter: var(--blur-sm);
+    border: var(--glass-border-subtle);
+    box-shadow: var(--glass-shadow);
+}
+
+.glass--dark {
+    background: var(--glass-dark);
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.glass--primary {
+    background: var(--glass-primary);
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.blur--sm { 
+    -webkit-backdrop-filter: var(--blur-sm);
+    backdrop-filter: var(--blur-sm); 
+}
+.blur--md { 
+    -webkit-backdrop-filter: var(--blur-md);
+    backdrop-filter: var(--blur-md); 
+}
+.blur--lg { 
+    -webkit-backdrop-filter: var(--blur-lg);
+    backdrop-filter: var(--blur-lg); 
+}
+.blur--xl { 
+    -webkit-backdrop-filter: var(--blur-xl);
+    backdrop-filter: var(--blur-xl); 
+}
+.blur--2xl { 
+    -webkit-backdrop-filter: var(--blur-2xl);
+    backdrop-filter: var(--blur-2xl); 
+}
+
+/* Floating Animation for Glass Elements */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.glass--float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.glass--float:nth-child(2) {
+    animation-delay: -2s;
+}
+
+.glass--float:nth-child(3) {
+    animation-delay: -4s;
+}
+
+/* Enhanced Hover Effects for Glass Elements */
+.glass:hover {
+    background: var(--glass-white-strong);
+    -webkit-backdrop-filter: var(--blur-lg);
+    backdrop-filter: var(--blur-lg);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Loading state typography */
