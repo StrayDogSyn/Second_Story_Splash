@@ -12,6 +12,8 @@ This project transforms data-driven insights into a compelling narrative-driven 
 
 *The modern, professional Second Story website featuring the Hunter Green brand color palette, comprehensive brand integration, and interactive data visualizations.*
 
+![Crisis](assets/screenshots/Crisis.png)
+
 ## ✨ Features
 
 ### Modern Web Standards
